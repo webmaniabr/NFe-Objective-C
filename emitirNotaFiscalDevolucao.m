@@ -8,11 +8,20 @@ NSDictionary *headers = @{ @"Cache-Control": @"no-cache",
                            @"X-Access-Token-Secret": @"SEU_ACCESS_TOKEN_SECRET"};
                            
 NSDictionary *parameters = @{ @"chave": @"00000000000000000000000000000000000000000000",
-                              @"correcao": @"O CFOP correto é 5.102 referente a revenda tributada no mesmo estado." };
+                              @"natureza_operacao": @"Devolução de venda de produção do estabelecimento",
+                              @"codigo_cfop": @"1.202",
+                              @"produtos": @[ @2, @3 ],
+                              @"ambiente": @"1" };
+
+NSDictionary *parameters = @{ @"chave": @"00000000000000000000000000000000000000000000",
+                              @"natureza_operacao": @"Devolução de venda de produção do estabelecimento",
+                              @"codigo_cfop": @"1.202",
+                              @"produtos": @[ @2, @3 ],
+                              @"ambiente": @"1" };
 
 NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://webmaniabr.com/api/1/nfe/cartacorrecao/"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://webmaniabr.com/api/1/nfe/devolucao/"]
                                                        cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                    timeoutInterval:10.0];
 [request setHTTPMethod:@"POST"];

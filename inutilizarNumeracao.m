@@ -1,14 +1,15 @@
 #import <Foundation/Foundation.h>
 
-NSDictionary *headers = @{ @"cache-control": @"no-cache",
-                           @"content-type": @"application/json",
-                           @"x-consumer-key": @"SEU_CONSUMER_KEY",
-                           @"x-consumer-secret": @"SEU_CONSUMER_SECRET",
-                           @"x-access-token": @"SEU_ACCESS_TOKEN",
-                           @"x-access-token-secret": @"SEU_ACCESS_TOKEN_SECRET" };
+NSDictionary *headers = @{ @"Cache-Control": @"no-cache",
+                           @"Content-Type": @"application/json",
+                           @"X-Consumer-Key": @"SEU_CONSUMER_KEY",
+                           @"X-Consumer-Secret": @"SEU_CONSUMER_SECRET",
+                           @"X-Access-Token": @"SEU_ACCESS_TOKEN",
+                           @"X-Access-Token-Secret": @"SEU_ACCESS_TOKEN_SECRET"};
+                           
 NSDictionary *parameters = @{ @"sequencia": @"101-109",
                               @"motivo": @"Inutilização por problemas técnicos.",
-                              @"ambiente": @"1",
+                              @"ambiente": @"2",
                               @"serie": @"99",
                               @"modelo": @"1" };
 

@@ -6,18 +6,12 @@ NSDictionary *headers = @{ @"Cache-Control": @"no-cache",
                            @"X-Consumer-Secret": @"SEU_CONSUMER_SECRET",
                            @"X-Access-Token": @"SEU_ACCESS_TOKEN",
                            @"X-Access-Token-Secret": @"SEU_ACCESS_TOKEN_SECRET"};
-                           
-NSDictionary *parameters = @{ @"chave": @"00000000000000000000000000000000000000000000",
-                              @"correcao": @"O CFOP correto é 5.102 referente a revenda tributada no mesmo estado." };
 
-NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
-
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://webmaniabr.com/api/1/nfe/cartacorrecao/"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://webmaniabr.com/api/1/nfe/consulta/?chave=00000000000000000000000000000000000000000000"]
                                                        cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                    timeoutInterval:10.0];
-[request setHTTPMethod:@"POST"];
+[request setHTTPMethod:@"GET"];
 [request setAllHTTPHeaderFields:headers];
-[request setHTTPBody:postData];
 
 NSURLSession *session = [NSURLSession sharedSession];
 NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request

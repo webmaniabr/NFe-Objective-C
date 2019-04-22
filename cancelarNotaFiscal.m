@@ -1,14 +1,14 @@
 #import <Foundation/Foundation.h>
 
-NSDictionary *headers = @{ @"cache-control": @"no-cache",
-                           @"content-type": @"application/json",
-                           @"x-consumer-key": @"SEU_CONSUMER_KEY",
-                           @"x-consumer-secret": @"SEU_CONSUMER_SECRET",
-                           @"x-access-token": @"SEU_ACCESS_TOKEN",
-                           @"x-access-token-secret": @"SEU_ACCESS_TOKEN_SECRET" };
-NSDictionary *parameters = @{ @"chave": @"45150819652219000198550990000000011442380343",
-                              @"motivo": @"Cancelamento por motivos administrativos.",
-                              @"ambiente": @"1" };
+NSDictionary *headers = @{ @"Cache-Control": @"no-cache",
+                           @"Content-Type": @"application/json",
+                           @"X-Consumer-Key": @"SEU_CONSUMER_KEY",
+                           @"X-Consumer-Secret": @"SEU_CONSUMER_SECRET",
+                           @"X-Access-Token": @"SEU_ACCESS_TOKEN",
+                           @"X-Access-Token-Secret": @"SEU_ACCESS_TOKEN_SECRET"};
+                           
+NSDictionary *parameters = @{ @"chave": @"00000000000000000000000000000000000000000000",
+                              @"motivo": @"Cancelamento por motivos administrativos."
 
 NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
 

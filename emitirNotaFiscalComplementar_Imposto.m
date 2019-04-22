@@ -7,12 +7,16 @@ NSDictionary *headers = @{ @"Cache-Control": @"no-cache",
                            @"X-Access-Token": @"SEU_ACCESS_TOKEN",
                            @"X-Access-Token-Secret": @"SEU_ACCESS_TOKEN_SECRET"};
                            
-NSDictionary *parameters = @{ @"chave": @"00000000000000000000000000000000000000000000",
-                              @"correcao": @"O CFOP correto é 5.102 referente a revenda tributada no mesmo estado." };
+NSDictionary *parameters = @{ @"nfe_referenciada": @"00000000000000000000000000000000000000000000",
+                              @"operacao": @1,
+                              @"natureza_operacao": @"Natureza da operação",
+                              @"ambiente": @2,
+                              @"cliente": @{ @"cpf": @"000.000.000-00", @"nome_completo": @"Nome completo", @"endereco": @"Av. Brg. Faria Lima", @"complemento": @"Escritorio", @"numero": @1000, @"bairro": @"Itaim Bibi", @"cidade": @"São Paulo", @"uf": @"SP", @"cep": @"00000-000", @"telefone": @"(00) 0000-0000", @"email": @"nome@email.com" },
+                              @"produtos": @[ @{ @"nome": @"Nome do produto", @"codigo": @"nome-do-produto", @"ncm": @"6109.10.00", @"cest": @"28.038.00", @"quantidade": @1, @"unidade": @"UN", @"peso": @"0.500", @"origem": @"", @"subtotal": @"29.90", @"total": @"29.90", @"tributos_federais": @"10.00", @"tributos_estaduais": @"10.00", @"impostos": @{ @"icms": @{ @"codigo_cfop": @"6.102", @"situacao_tributaria": @"102" }, @"ipi": @{ @"situacao_tributaria": @"99", @"codigo_enquadramento": @"999", @"aliquota": @"0.00" }, @"pis": @{ @"situacao_tributaria": @"99", @"aliquota": @"0.00" }, @"cofins": @{ @"situacao_tributaria": @"99", @"aliquota": @"0.00" } } } ] };
 
 NSData *postData = [NSJSONSerialization dataWithJSONObject:parameters options:0 error:nil];
 
-NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://webmaniabr.com/api/1/nfe/cartacorrecao/"]
+NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://webmaniabr.com/api/1/nfe/complementar/"]
                                                        cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                    timeoutInterval:10.0];
 [request setHTTPMethod:@"POST"];

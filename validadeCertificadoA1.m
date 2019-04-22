@@ -1,12 +1,12 @@
 #import <Foundation/Foundation.h>
 
-NSDictionary *headers = @{ @"cache-control": @"no-cache",
-                           @"content-type": @"application/json",
-                           @"x-consumer-key": @"SEU_CONSUMER_KEY",
-                           @"x-consumer-secret": @"SEU_CONSUMER_SECRET",
-                           @"x-access-token": @"SEU_ACCESS_TOKEN",
-                           @"x-access-token-secret": @"SEU_ACCESS_TOKEN_SECRET" };
-
+NSDictionary *headers = @{ @"Cache-Control": @"no-cache",
+                           @"Content-Type": @"application/json",
+                           @"X-Consumer-Key": @"SEU_CONSUMER_KEY",
+                           @"X-Consumer-Secret": @"SEU_CONSUMER_SECRET",
+                           @"X-Access-Token": @"SEU_ACCESS_TOKEN",
+                           @"X-Access-Token-Secret": @"SEU_ACCESS_TOKEN_SECRET"};
+                           
 NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:@"https://webmaniabr.com/api/1/nfe/certificado/"]
                                                        cachePolicy:NSURLRequestUseProtocolCachePolicy
                                                    timeoutInterval:10.0];
